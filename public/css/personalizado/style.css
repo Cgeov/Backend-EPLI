@@ -1,0 +1,46 @@
+.img-login-administrador{
+    width: 60%;
+    margin-left: 25%;
+    padding: 5% 0%;
+}
+.img-Change-pass{
+    width: 15%;
+    margin-left: 25%;
+    padding: 5% 0%;
+}
+
+
+.nav-link:hover span {
+    color: #05B00A ;
+}
+
+.nav-link:hover i {
+    color: green !important;
+}
+
+.collapse-item {
+    color: white !important;
+}
+
+.collapse-item:hover{
+    color: black !important;
+}
+
+.collapse-inner{
+    background-color: #05B00A !important;
+}
+
+.options_action{
+    padding: 10px;
+    text-align: center;
+}
+
+.options_action:hover{
+    cursor: pointer;
+    color: blue;
+}
+
+.options_action:hover a{
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.9));
+    text-decoration: none;
+}
