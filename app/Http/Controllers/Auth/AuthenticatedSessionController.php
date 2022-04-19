@@ -19,7 +19,7 @@ class AuthenticatedSessionController extends Controller
     {
         //return view('login')->with(['message' => 'Inicia sesión por favor', 'tittle' => 'Advertencia', 'icon' => 'warning']);
         return redirect('/')
-            ->with(['message' => 'Inicia sesión por favor', 'tittle' => 'Advertencia', 'icon' => 'warning']);
+            ->with(['message' => 'La contraseña se cambio', 'tittle' => 'Éxito', 'icon' => 'success']);
     }
 
     /**
