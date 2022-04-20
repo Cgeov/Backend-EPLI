@@ -29,7 +29,7 @@ class PasswordResetLinkController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'regex:/^(\w+([-+.]\w+)*@(gmail|hotmail|yahoo|outlook))+?\.[a-zA-Z]{2,3}$/'],
         ]);
 
         // We will send the password reset link to this user. Once we have attempted

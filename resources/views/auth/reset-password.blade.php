@@ -3,14 +3,22 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-            <img width="150px" class="img-Change-pass" src="{{ asset('img/administrador/login.png') }}" alt="Homepage" >
-            </a>
+            <img class="img-Change-pass" src="{{ asset('img/administrador/login.png') }}" alt="Homepage" >
         </x-slot>
 
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
+        <!--<x-auth-validation-errors class="mb-4" :errors="$errors" />-->
+        <ul class="mt-3 list-disc list-inside text-sm text-red-600">
+            @if($errors->any())  
+            <div class="mb-4">
+            <div class="font-medium text-red-600">
+                Usted posee los siguientes errores:
+            </div>  
+            @foreach($errors->all() as $error)
+            <li>{!! $error !!}</li>
+            @endforeach
+            @endif    
+        </ul>
         <form method="POST" action="{{ route('password.update') }}">
             @csrf
 
@@ -21,7 +29,7 @@
             <div>
                 <x-label for="email" :value="__('Correo')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+                <x-input readonly="true" id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
             </div>
 
             <!-- Password -->

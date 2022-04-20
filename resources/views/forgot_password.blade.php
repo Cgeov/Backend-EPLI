@@ -24,6 +24,13 @@
                                             ¡Le hemos enviado un correo electrónico con su enlace de restablecimiento de contraseña!
                                         </div>
                                     @endif
+                                    @if($errors)
+                                    @foreach($errors->all() as $error)
+                                        <div class="alert alert-danger" role= "alert">
+                                            {{ $error }}
+                                        </div>
+                                    @endforeach
+                                    @endif
                                     <form class="user" method="POST" action="{{ route('password.email') }}">
                                         @csrf
                                         <div class="form-group">
